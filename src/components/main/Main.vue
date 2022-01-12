@@ -1,9 +1,16 @@
 <template>
-  <div>Main</div>
+  <div>
+    <ol-map></ol-map>
+  </div>
 </template>
 
 <script>
-export default {};
+import OlMap from "@/components/olMap/OlMap.vue";
+export default {
+  components: {
+    "ol-map": OlMap,
+  },
+};
 </script>
 
 <style>
