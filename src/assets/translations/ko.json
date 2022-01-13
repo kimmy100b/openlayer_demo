@@ -1,5 +1,8 @@
 {
   "APP": {
     "TITLE": "APP 페이지"
+  },
+  "OLMAP": {
+    "SATELLITE_BTN": "위성지도"
   }
 }

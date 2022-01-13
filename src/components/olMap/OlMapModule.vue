@@ -1,6 +1,5 @@
 <template>
-  <div class="OlMapModule-main">
-    <div ref="map" class="map"></div>
+  <div ref="map" class="olMapModule-main">
   </div>
 </template>
 
@@ -9,17 +8,22 @@ import Map from "ol/Map.js";
 import View from "ol/View.js";
 import TileLayer from "ol/layer/Tile.js";
 import OSM from "ol/source/OSM";
+import XYZ from "ol/source/XYZ";
 import { fromLonLat } from "ol/proj.js";
 import { defaults as defaultControls } from "ol/control.js";
+import 'ol/ol.css';
 
 export default {
   name: "OlMapModule",
   props: {
     center: { Type: Array },
+    tile: { Type : Object },
+    satellite: { Type : Object },
   },
   data() {
-    return {
-      olMap: undefined,
+    return { 
+      map: null,
+      tileLayer: null // removeLayer 시에는 tileLayer가 무엇인지 알아야함
     };
   },
   mounted() {
@@ -27,10 +31,8 @@ export default {
       center: fromLonLat(this.center),
       zoom: 10,
     });
-    let tile = new TileLayer({
-      source: new OSM(), // OpenStreetMap
-    });
-    this.olMap = new Map({
+    this.tileLayer = this.getTileLayer(this.satellite.isShow);
+    this.map = new Map({
       target: this.$refs.map,
       controls: defaultControls({
         attribution: false,
@@ -38,16 +40,37 @@ export default {
         zoom: false,
         rotate: false,
       }),
-      layers: [tile],
+      layers: [this.tileLayer],
       view: view,
     });
   },
+  methods: {
+    getTileLayer(isSatellite) {
+      return  new TileLayer({
+        source: isSatellite ? new XYZ({ // 위성
+          tileSize: this.tile.size,
+          url: this.satellite.url
+        }) : new OSM() // OpenStreetMap
+      });
+    },
+    showSatellite(isSatellite) {
+      this.tileLayer = this.getTileLayer(isSatellite);
+      this.map.addLayer(this.tileLayer);
+    },
+    // refresh() {
+    //   this.$map.updateSize();
+    //   this.$map.getLayers().forEach(layer => {
+    //       layer.getSource().refresh();
+    //   });
+    //   //vectorlayer.refresh({force:true});
+    // },
+  }
 };
 </script>
 
 <style>
-.map {
-  height: 400px;
+.olMapModule-main {
   width: 100%;
+  height: 100%;
 }
 </style>
