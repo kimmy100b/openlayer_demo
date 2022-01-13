@@ -10,5 +10,5 @@ module.exports = {
             'images': path.join(__dirname, '..', 'src/assets/img/'), // 상위 경로의 위치라서 중간에 '..' 을 추가한다.
             'vue$': 'vue/dist/vue.esm.js'
         }
-    },
+    }
 }

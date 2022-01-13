@@ -13,7 +13,6 @@
 
 <script>
 import { Splitpanes, Pane } from "splitpanes";
-import "splitpanes/dist/splitpanes.css";
 
 import OlMap from "@/components/olMap/OlMap.vue";
 

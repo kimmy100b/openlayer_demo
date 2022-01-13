@@ -5,10 +5,14 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import i18n from './assets/translations/index.js'
-import { Switch } from 'element-ui';
+import { Switch, Select, Option } from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import 'splitpanes/dist/splitpanes.css';
 
+/* Element UI */
 Vue.use(Switch);
+Vue.use(Select);
+Vue.use(Option);
 
 Vue.config.productionTip = false
 

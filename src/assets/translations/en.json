@@ -1,5 +1,14 @@
 {
+  "GOLOBAL": {
+    "SELECT": {
+      "NO_DATA": "비어있음"
+    }
+  },
   "APP": {
     "TITLE": "This is APP"
+  },
+  "OLMAP": {
+    "SATELLITE_BTN": "SATELLITE",
+    "DRAW_TYPE": "DRAW TYPE"
   }
 }
