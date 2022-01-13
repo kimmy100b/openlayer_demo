@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    {{ $t("APP.TITLE") }}
     <main-page></main-page>
   </div>
 </template>

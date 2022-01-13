@@ -11,7 +11,9 @@
   "dependencies": {
     "@vue/composition-api": "^1.4.3",
     "core-js": "^3.6.5",
+    "element-ui": "^2.15.6",
     "ol": "^6.11.0",
+    "splitpanes": "^2.3.8",
     "vue": "^2.6.11",
     "vue-i18n": "^8.26.8",
     "vue-router": "^3.2.0",
@@ -24,6 +26,7 @@
     "@vue/cli-plugin-vuex": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "babel-eslint": "^10.1.0",
+    "babel-plugin-component": "^1.1.1",
     "case-sensitive-paths-webpack-plugin": "^2.4.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
@@ -37,7 +40,8 @@
   "eslintConfig": {
     "root": true,
     "env": {
-      "node": true
+      "node": true,
+      "browser": true
     },
     "extends": [
       "plugin:vue/essential",
