@@ -12,11 +12,15 @@ export default {
   data() {
     return {};
   },
+  mounted() {
+
+  },
   components: {
     "main-page": MainPage,
   },
 };
 </script>
 
-<style lang="scss">
+<style lang='scss'>
+  @import '~@/assets/scss/app.scss';
 </style>

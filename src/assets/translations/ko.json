@@ -1,8 +1,14 @@
 {
+  "GOLOBAL": {
+    "SELECT": {
+      "NO_DATA": "비어있음"
+    }
+  },
   "APP": {
     "TITLE": "APP 페이지"
   },
   "OLMAP": {
-    "SATELLITE_BTN": "위성지도"
+    "SATELLITE_BTN": "위성지도",
+    "DRAW_TYPE": "그리기 타입"
   }
 }
